@@ -9,6 +9,6 @@
 
 ![](ScreenShot_2.png)
 
-##### 技术交流
+##### 加我微信进群学习交流SwiftUI技术
 
 ![](wechat.jpg)
