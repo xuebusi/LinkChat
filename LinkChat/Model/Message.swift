@@ -48,3 +48,9 @@ extension MessageRole {
     }
 }
 
+enum MessageStatus: String, Codable {
+    case thinking = "思考中..."
+    case sending = "发送中..."
+    case complated = "已结束"
+    case error = "Error"
+}
