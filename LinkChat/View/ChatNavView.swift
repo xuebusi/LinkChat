@@ -20,12 +20,19 @@ struct ChatNavView: View {
                 }
                 .tag(0)
             
+            ChatHistoryView()
+                .tabItem {
+                    Image(systemName: "clock.badge.checkmark.fill")
+                    Text("历史")
+                }
+                .tag(1)
+            
             ConfigFormView()
                 .tabItem {
                     Image(systemName: "gearshape.fill")
                     Text("配置")
                 }
-                .tag(1)
+                .tag(2)
         }
         .accentColor(.cyan)
         .environmentObject(vm)

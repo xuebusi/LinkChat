@@ -25,6 +25,9 @@
 		2B87F07329ED520E00C87044 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B87F05929ED520E00C87044 /* Message.swift */; };
 		2B87F07929ED520E00C87044 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B87F06029ED520E00C87044 /* Config.swift */; };
 		2B87F07B29ED520E00C87044 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B87F06429ED520E00C87044 /* ChatViewModel.swift */; };
+		2BD0596729F2C58B00D5C316 /* ChatHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0596629F2C58B00D5C316 /* ChatHistoryView.swift */; };
+		2BD0596929F2DAAA00D5C316 /* ChatHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0596829F2DAAA00D5C316 /* ChatHistoryViewModel.swift */; };
+		2BD0596B29F2E9EB00D5C316 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0596A29F2E9EB00D5C316 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		2B87F05929ED520E00C87044 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2B87F06029ED520E00C87044 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		2B87F06429ED520E00C87044 /* ChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		2BD0596629F2C58B00D5C316 /* ChatHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryView.swift; sourceTree = "<group>"; };
+		2BD0596829F2DAAA00D5C316 /* ChatHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryViewModel.swift; sourceTree = "<group>"; };
+		2BD0596A29F2E9EB00D5C316 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,7 @@
 				2B87F05029ED520D00C87044 /* AboutInfoView.swift */,
 				2B87F05229ED520D00C87044 /* ConfigApiKeyView.swift */,
 				2B87F05729ED520D00C87044 /* ErrorBoxView.swift */,
+				2BD0596629F2C58B00D5C316 /* ChatHistoryView.swift */,
 			);
 			name = View;
 			path = LinkChat/View;
@@ -146,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				2B87F06429ED520E00C87044 /* ChatViewModel.swift */,
+				2BD0596829F2DAAA00D5C316 /* ChatHistoryViewModel.swift */,
 			);
 			name = ViewModel;
 			path = LinkChat/ViewModel;
@@ -156,6 +164,7 @@
 			children = (
 				2B87F04729ED520D00C87044 /* Api */,
 				2B87F04B29ED520D00C87044 /* Manager */,
+				2BD0596A29F2E9EB00D5C316 /* Const.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -231,7 +240,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B87F06829ED520E00C87044 /* UserDefManager.swift in Sources */,
+				2BD0596B29F2E9EB00D5C316 /* Const.swift in Sources */,
 				2B87F06729ED520E00C87044 /* OpenAIAPI.swift in Sources */,
+				2BD0596729F2C58B00D5C316 /* ChatHistoryView.swift in Sources */,
 				2B87F07329ED520E00C87044 /* Message.swift in Sources */,
 				2B87F06C29ED520E00C87044 /* ChatNavView.swift in Sources */,
 				2B87F03C29ED511700C87044 /* ContentView.swift in Sources */,
@@ -243,6 +254,7 @@
 				2B87F06F29ED520E00C87044 /* SuccessAlertView.swift in Sources */,
 				2B87F03A29ED511700C87044 /* LinkChatApp.swift in Sources */,
 				2B87F07229ED520E00C87044 /* ErrorBoxView.swift in Sources */,
+				2BD0596929F2DAAA00D5C316 /* ChatHistoryViewModel.swift in Sources */,
 				2B87F07929ED520E00C87044 /* Config.swift in Sources */,
 				2B87F06B29ED520E00C87044 /* AboutInfoView.swift in Sources */,
 				2B87F06E29ED520E00C87044 /* MessageView.swift in Sources */,

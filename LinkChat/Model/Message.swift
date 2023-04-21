@@ -12,6 +12,7 @@ struct Message: Identifiable, Hashable, Codable {
     var role: MessageRole
     var content: String
     var status: MessageStatus
+    var date = Date()
 }
 
 enum MessageRole: Codable {

@@ -79,7 +79,7 @@ class OpenAIAPI: @unchecked Sendable {
             Task(priority: .userInitiated) { [weak self] in
                 guard let self else { return }
                 do {
-                    var responseText = ""
+                    var answerText = ""
                     for try await line in result.lines {
                         print(">>> line:\n")
                         print("\(line)")
@@ -87,11 +87,13 @@ class OpenAIAPI: @unchecked Sendable {
                            let data = line.dropFirst(6).data(using: .utf8),
                            let response = try? self.jsonDecoder.decode(AIStreamCompletionResponse.self, from: data),
                            let text = response.choices.first?.delta.content {
-                            responseText += text
+                            answerText += text
                             continuation.yield(text)
                         }
                     }
                     continuation.finish()
+                    // 存储问答
+                    ChatHistoryViewModel().saveAnswer(questionText: text, answerText: answerText)
                 } catch {
                     continuation.finish(throwing: error)
                 }
