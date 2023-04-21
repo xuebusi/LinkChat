@@ -2,7 +2,7 @@
 //  ChatHistoryView.swift
 //  LinkChat
 //
-//  Created by shiyanjun on 2023/4/21.
+//  Created by link on 2023/4/21.
 //
 
 import SwiftUI
