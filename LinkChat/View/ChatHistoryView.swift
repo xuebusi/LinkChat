@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChatHistoryView: View {
     @StateObject var hisVM = ChatHistoryViewModel()
+    @State var showAlert: Bool = false
     
     var body: some View {
         NavigationView {
@@ -22,6 +23,7 @@ struct ChatHistoryView: View {
                                 .lineLimit(3)
                             Spacer()
                             Text(dateString(date: question.date))
+                                .font(.system(.subheadline))
                                 .foregroundColor(.gray)
                         }
                     }
@@ -44,12 +46,40 @@ extension ChatHistoryView {
     func answerView(question: Message) -> some View {
         VStack {
             ScrollView {
-                TextField("", text: Binding.constant(hisVM.getAnswer(questionId: question.id.uuidString)), axis: .vertical)
-                    .padding()
-                    .background(Color.cyan.opacity(0.5))
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("问题：\(question.content)")
+                        .font(.system(.headline))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Divider()
+                    Text(hisVM.getAnswer(questionId: question.id.uuidString))
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(Color.cyan.opacity(0.5))
+                }
+                .padding()
+                .onTapGesture {
+                    let copyText = """
+                    问题：\(question.content)\n
+                    \(hisVM.getAnswer(questionId: question.id.uuidString))\n
+                    """
+                    let pastebord = UIPasteboard.general
+                    pastebord.string = copyText
+                    showAlert.toggle()
+                }
             }
         }
         .navigationTitle(question.content)
+        .overlay(
+            showAlert ? AnyView(
+                SuccessAlertView(
+                    isPresented: $showAlert,
+                    message: "复制成功",
+                    action: {
+                        // 保存成功后的处理逻辑
+                    }
+                ).zIndex(1) // 将AlertView覆盖在主视图上
+            ) : AnyView(EmptyView())
+        )
     }
 }
 
