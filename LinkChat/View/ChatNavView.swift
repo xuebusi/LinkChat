@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChatNavView: View {
     @StateObject var vm = ChatViewModel(api: OpenAIAPI())
-    @State var selectionTab: Int = 1
+    @State var selectionTab: Int = 0
     
     var body: some View {
         TabView(selection: $selectionTab) {

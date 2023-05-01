@@ -34,7 +34,7 @@ struct ConfigApiKeyView: View {
                         }
                     }
                 }
-                Text("请到OpenAI官网(https://openai.com)申请密钥。")
+                Text("请到OpenAI官网(https://openai.com)申请免费密钥")
                     .font(.system(.caption))
                     .foregroundColor(.gray)
                 Button {
